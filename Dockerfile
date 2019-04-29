@@ -17,7 +17,7 @@ RUN apt-get install -y gcc
 RUN apt-get install -y g++
 # RUN apt-get install -y php5-cli
 # RUN apt-get install -y ruby
-RUN apt-get install -y python
+RUN apt-get install -y python3
 # RUN apt-get install -y curl
 # RUN mkdir -p /opt/rust && \
 #     curl https://sh.rustup.rs -sSf | HOME=/opt/rust sh -s -- --no-modify-path -y && \
@@ -31,6 +31,7 @@ WORKDIR /input
 COPY ./input /input
 RUN bash -i
 # RUN python *.py > /output/out.txt
-CMD python *.py >/output/ans.txt
+# CMD python *.py >/output/ans.txt
+CMD python3 compiler.py
 # RUN echo "mysql ALL = NOPASSWD: /usr/sbin/service mysql start" | cat >> /etc/sudoers
 

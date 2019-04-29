@@ -6,8 +6,8 @@ def subprocess_cmd(command,inputfile,outputfile,time_limit,mem_limit):
 	command="ulimit -Sv " + mem_limit+";"+command
 	process = subprocess.Popen(command,stdout=outputfile,stdin=inputfile,shell=True, preexec_fn=os.setsid)
 	is_timeout=wait_timeout(process,time_limit)
-	if is_timeout:
-		print("Time Limit Exceeded!!")
+	# if is_timeout:
+		# print("Time Limit Exceeded!!")
 
 def wait_timeout(proc, seconds):
 	start = time.time()
@@ -26,9 +26,9 @@ def wait_timeout(proc, seconds):
 
 dic_languages={1:"python3 test.py", 2:"gcc test.c;./a.out",3:"g++ test.cpp;./a.out"}
 command_to_compile = ""
-inputfile = open("inp.txt")
+inputfile = open("/input/inp.txt")
 sanitized_input = open("sanitized_input","w+")
-outputfile = open("output.txt","a+")
+outputfile = open("/output/output.txt","a+")
 
 # Fetch Parameters [language,time_limit,mem_limit]
 
@@ -39,7 +39,7 @@ time_limit = int(parameters[1])
 mem_limit = parameters[2]
 
 command_to_compile = dic_languages[language]
-print("compiling ",command_to_compile)
+# print("compiling ",command_to_compile)
 
 # Stripfile for the first line
 subprocess.Popen("sed '1d'  inp.txt",stdout=sanitized_input,stdin=inputfile,shell=True, preexec_fn=os.setsid)
