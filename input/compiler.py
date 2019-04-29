@@ -6,8 +6,8 @@ def subprocess_cmd(command,inputfile,outputfile,time_limit,mem_limit):
 	command="ulimit -Sv " + mem_limit+";"+command
 	process = subprocess.Popen(command,stdout=outputfile,stdin=inputfile,shell=True, preexec_fn=os.setsid)
 	is_timeout=wait_timeout(process,time_limit)
-	# if is_timeout:
-		# print("Time Limit Exceeded!!")
+	if is_timeout:
+		print("Time Limit Exceeded!!")
 
 def wait_timeout(proc, seconds):
 	start = time.time()

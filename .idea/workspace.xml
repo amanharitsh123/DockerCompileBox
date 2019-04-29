@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f31e35e-513c-4c67-8334-894ac8165690" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input/compiler.py" beforeDir="false" afterPath="$PROJECT_DIR$/input/compiler.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,7 +27,7 @@
         <counts>
           <entry key="C++" value="2" />
           <entry key="PLAIN_TEXT" value="25" />
-          <entry key="Python" value="4" />
+          <entry key="Python" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -42,10 +42,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/compiler.py">
+        <entry file="file://$PROJECT_DIR$/input/compiler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="135">
+              <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -80,6 +80,7 @@
         <option value="$PROJECT_DIR$/compiler.py" />
         <option value="$PROJECT_DIR$/test.cpp" />
         <option value="$PROJECT_DIR$/inp.txt" />
+        <option value="$PROJECT_DIR$/input/compiler.py" />
       </list>
     </option>
   </component>
@@ -89,7 +90,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-102" />
     <option name="y" value="34" />
     <option name="width" value="1910" />
@@ -108,6 +109,11 @@
             <path>
               <item name="Minor2" type="b2602c69:ProjectViewProjectNode" />
               <item name="Minor2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Minor2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Minor2" type="462c0819:PsiDirectoryNode" />
+              <item name="input" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -252,6 +258,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/input/compiler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
         </state>
       </provider>
     </entry>
