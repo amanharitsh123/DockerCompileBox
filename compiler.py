@@ -1,6 +1,9 @@
 import subprocess, os, time, signal
 
 def subprocess_cmd(command,inputfile,outputfile,time_limit,mem_limit):
+	# ulimit -Sv 500000
+	#augmenting command for memory usage restriction 
+	command="ulimit -Sv " + mem_limit+";"+command
 	process = subprocess.Popen(command,stdout=outputfile,stdin=inputfile,shell=True, preexec_fn=os.setsid)
 	is_timeout=wait_timeout(process,time_limit)
 	if is_timeout:
@@ -33,7 +36,7 @@ parameters = inputfile.readline()
 parameters = parameters.split()
 language = int(parameters[0])
 time_limit = int(parameters[1])
-mem_limit = int(parameters[2])
+mem_limit = parameters[2]
 
 command_to_compile = dic_languages[language]
 print("compiling ",command_to_compile)
