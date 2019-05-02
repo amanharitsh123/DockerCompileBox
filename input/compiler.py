@@ -7,7 +7,21 @@ def subprocess_cmd(command,inputfile,outputfile,time_limit,mem_limit):
 	process = subprocess.Popen(command,stdout=outputfile,stdin=inputfile,shell=True, preexec_fn=os.setsid)
 	is_timeout=wait_timeout(process,time_limit)
 	if is_timeout:
-		print("Time Limit Exceeded!!")
+		return True
+		# print("Time Limit Exceeded!!")
+
+def compute_score(f1,f2,is_TLE):
+	file1=open(f1,"r")
+	file2=open(f2,"r")
+	score=0
+	for x,y in zip(file1.readlines(),file2.readlines()):
+		if x==y:
+			score+=1
+	file1=open(f1,"w")
+	file1.write(str(score))
+	# print(score)
+	if is_TLE:
+		file1.write(" Time Limit Exceeded")
 
 def wait_timeout(proc, seconds):
 	start = time.time()
@@ -27,8 +41,8 @@ def wait_timeout(proc, seconds):
 dic_languages={1:"python3 test.py", 2:"gcc test.c;./a.out",3:"g++ test.cpp;./a.out"}
 command_to_compile = ""
 inputfile = open("/input/inp.txt")
-sanitized_input = open("sanitized_input","w+")
-outputfile = open("/output/output.txt","a+")
+sanitized_input = open("sanitized_input","w")
+outputfile = open("/output/output.txt","w")
 
 # Fetch Parameters [language,time_limit,mem_limit]
 
@@ -46,4 +60,6 @@ subprocess.Popen("sed '1d'  inp.txt",stdout=sanitized_input,stdin=inputfile,shel
 
 # Changing input file to read mode and starting compilation
 sanitized_input=open("sanitized_input","r")
-subprocess_cmd(command_to_compile,sanitized_input,outputfile,time_limit,mem_limit)
+is_TLE=subprocess_cmd(command_to_compile,sanitized_input,outputfile,time_limit,mem_limit)
+compute_score("/output/output.txt","/output/target.txt",is_TLE)
+

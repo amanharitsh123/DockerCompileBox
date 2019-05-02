@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 set -x
 # remove any previous container
 sudo docker rm `sudo docker inspect --format="{{.Id}}" securo`
